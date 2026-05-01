@@ -698,4 +698,27 @@
   <p class="ptv-foot">Données au 1 mai 2026</p>
 </div>
 </div>
+
+<!-- Mini-script (15 lignes) : envoie la hauteur du contenu au parent
+     pour que l'iframe s'auto-ajuste. Aucun impact sur les onglets/filtres
+     qui restent en CSS pur. -->
+<script>
+(function(){
+  function sendHeight(){
+    try {
+      var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+      if (parent !== window) parent.postMessage({type:'ptv-height', height:h}, '*');
+    } catch(e){}
+  }
+  window.addEventListener('load', sendHeight);
+  document.addEventListener('change', function(e){
+    if (e.target && e.target.classList && e.target.classList.contains('ptv-radio')) {
+      setTimeout(sendHeight, 30);
+    }
+  });
+  if (window.ResizeObserver) { new ResizeObserver(sendHeight).observe(document.documentElement); }
+  window.addEventListener('resize', sendHeight);
+  setTimeout(sendHeight, 100);
+})();
+</script>
 <!-- /Widget Programme TV Foot -->
