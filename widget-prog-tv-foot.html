@@ -1,0 +1,701 @@
+<!-- =============================================================
+  Widget Programme TV Foot - HTML/CSS only (zéro JavaScript)
+  Embed dans un bloc "HTML personnalisé" WordPress.
+  Toute la CSS est scopée dans .ptv-widget pour ne pas polluer le thème.
+  Source des données : footao.tv + matchs.tv (snapshot du 1 mai 2026)
+============================================================= -->
+<div class="ptv-widget">
+<style>
+  .ptv-widget,
+  .ptv-widget *,
+  .ptv-widget *::before,
+  .ptv-widget *::after { box-sizing: border-box; }
+
+  .ptv-widget {
+    --ptv-bg:        #0f172a;
+    --ptv-bg-alt:    #1e293b;
+    --ptv-bg-row:    #15203a;
+    --ptv-border:    #334155;
+    --ptv-text:      #f1f5f9;
+    --ptv-muted:     #94a3b8;
+    --ptv-accent:    #22c55e;
+    --ptv-accent-d:  #15803d;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--ptv-bg);
+    color: var(--ptv-text);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 880px;
+    margin: 16px auto;
+    font-size: 14px;
+    line-height: 1.45;
+    box-shadow: 0 6px 28px rgba(0,0,0,.18);
+  }
+
+  /* Inputs cachés (radio = état CSS) */
+  .ptv-widget .ptv-radio {
+    position: absolute;
+    width: 1px; height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  /* Header */
+  .ptv-widget .ptv-head {
+    padding: 18px 22px 14px;
+    background: linear-gradient(135deg, #16a34a 0%, #0d9488 100%);
+  }
+  .ptv-widget .ptv-head h2 {
+    margin: 0 0 2px;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -.01em;
+  }
+  .ptv-widget .ptv-head p {
+    margin: 0;
+    color: rgba(255,255,255,.85);
+    font-size: 12.5px;
+  }
+
+  /* Onglets jours */
+  .ptv-widget .ptv-days {
+    display: flex;
+    overflow-x: auto;
+    background: var(--ptv-bg-alt);
+    border-bottom: 1px solid var(--ptv-border);
+    scrollbar-width: thin;
+  }
+  .ptv-widget .ptv-day {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 11px 14px;
+    cursor: pointer;
+    color: var(--ptv-muted);
+    border-bottom: 3px solid transparent;
+    user-select: none;
+    transition: background .15s, color .15s, border-color .15s;
+    white-space: nowrap;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+  }
+  .ptv-widget .ptv-day strong {
+    display: block;
+    font-size: 15px;
+    margin-top: 2px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: inherit;
+    font-weight: 800;
+  }
+  .ptv-widget .ptv-day:hover { color: var(--ptv-text); background: rgba(255,255,255,.04); }
+
+  /* Filtres chaînes */
+  .ptv-widget .ptv-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--ptv-bg);
+    border-bottom: 1px solid var(--ptv-border);
+  }
+  .ptv-widget .ptv-filt {
+    padding: 6px 12px;
+    border: 1px solid var(--ptv-border);
+    border-radius: 18px;
+    cursor: pointer;
+    color: var(--ptv-muted);
+    font-size: 12px;
+    font-weight: 600;
+    user-select: none;
+    transition: all .15s;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .ptv-widget .ptv-filt:hover {
+    color: var(--ptv-text);
+    border-color: var(--ptv-muted);
+  }
+
+  /* Tableau */
+  .ptv-widget .ptv-thead {
+    display: grid;
+    grid-template-columns: 70px 1fr 140px;
+    gap: 10px;
+    padding: 10px 18px;
+    background: var(--ptv-bg-alt);
+    color: var(--ptv-muted);
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid var(--ptv-border);
+  }
+
+  .ptv-widget .ptv-row {
+    display: none;
+    grid-template-columns: 70px 1fr 140px;
+    gap: 10px;
+    padding: 11px 18px;
+    border-bottom: 1px solid var(--ptv-border);
+    align-items: center;
+  }
+  .ptv-widget .ptv-row:hover { background: var(--ptv-bg-row); }
+
+  .ptv-widget .ptv-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    color: var(--ptv-accent);
+    font-size: 14px;
+  }
+  .ptv-widget .ptv-match {
+    font-size: 13.5px;
+    color: var(--ptv-text);
+    font-weight: 600;
+  }
+  .ptv-widget .ptv-match span {
+    display: block;
+    color: var(--ptv-muted);
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  .ptv-widget .ptv-tv {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .ptv-widget .ptv-bdg {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 800;
+    background: var(--ptv-bg-alt);
+    color: var(--ptv-text);
+    border: 1px solid var(--ptv-border);
+    letter-spacing: .02em;
+  }
+  .ptv-widget .ptv-bdg.dazn   { background: #f8e71c; color: #000; border-color: #f8e71c; }
+  .ptv-widget .ptv-bdg.bein   { background: #56247a; color: #fff; border-color: #56247a; }
+  .ptv-widget .ptv-bdg.canal  { background: #000;    color: #fff; border-color: #444; }
+  .ptv-widget .ptv-bdg.ligue1 { background: #1e3a8a; color: #fff; border-color: #1e3a8a; }
+  .ptv-widget .ptv-bdg.equipe { background: #fff;    color: #000; border-color: #fff; }
+  .ptv-widget .ptv-bdg.disney { background: #006fcf; color: #fff; border-color: #006fcf; }
+  .ptv-widget .ptv-bdg.yt     { background: #ff0000; color: #fff; border-color: #ff0000; }
+
+  .ptv-widget .ptv-foot {
+    padding: 10px 16px;
+    font-size: 11px;
+    color: var(--ptv-muted);
+    text-align: center;
+    margin: 0;
+    background: var(--ptv-bg-alt);
+    border-top: 1px solid var(--ptv-border);
+  }
+  .ptv-widget .ptv-foot a { color: var(--ptv-muted); text-decoration: underline; }
+
+  /* === État actif des onglets jour === */
+  .ptv-widget #ptv-d1:checked ~ .ptv-inner [for="ptv-d1"],
+  .ptv-widget #ptv-d2:checked ~ .ptv-inner [for="ptv-d2"],
+  .ptv-widget #ptv-d3:checked ~ .ptv-inner [for="ptv-d3"],
+  .ptv-widget #ptv-d4:checked ~ .ptv-inner [for="ptv-d4"],
+  .ptv-widget #ptv-d5:checked ~ .ptv-inner [for="ptv-d5"],
+  .ptv-widget #ptv-d6:checked ~ .ptv-inner [for="ptv-d6"] {
+    color: var(--ptv-text);
+    border-bottom-color: var(--ptv-accent);
+    background: rgba(34,197,94,.10);
+  }
+
+  /* === État actif des filtres chaîne === */
+  .ptv-widget #ptv-c-all:checked    ~ .ptv-inner [for="ptv-c-all"],
+  .ptv-widget #ptv-c-dazn:checked   ~ .ptv-inner [for="ptv-c-dazn"],
+  .ptv-widget #ptv-c-bein:checked   ~ .ptv-inner [for="ptv-c-bein"],
+  .ptv-widget #ptv-c-canal:checked  ~ .ptv-inner [for="ptv-c-canal"],
+  .ptv-widget #ptv-c-ligue1:checked ~ .ptv-inner [for="ptv-c-ligue1"],
+  .ptv-widget #ptv-c-equipe:checked ~ .ptv-inner [for="ptv-c-equipe"],
+  .ptv-widget #ptv-c-disney:checked ~ .ptv-inner [for="ptv-c-disney"],
+  .ptv-widget #ptv-c-yt:checked     ~ .ptv-inner [for="ptv-c-yt"] {
+    background: var(--ptv-accent);
+    color: #fff;
+    border-color: var(--ptv-accent);
+  }
+
+  /* === Affichage des matchs selon le jour sélectionné === */
+  .ptv-widget #ptv-d1:checked ~ .ptv-inner .ptv-row.d-1,
+  .ptv-widget #ptv-d2:checked ~ .ptv-inner .ptv-row.d-2,
+  .ptv-widget #ptv-d3:checked ~ .ptv-inner .ptv-row.d-3,
+  .ptv-widget #ptv-d4:checked ~ .ptv-inner .ptv-row.d-4,
+  .ptv-widget #ptv-d5:checked ~ .ptv-inner .ptv-row.d-5,
+  .ptv-widget #ptv-d6:checked ~ .ptv-inner .ptv-row.d-6 {
+    display: grid;
+  }
+
+  /* === Filtre chaîne : on cache les lignes qui ne contiennent pas la chaîne sélectionnée === */
+  .ptv-widget #ptv-c-dazn:checked   ~ .ptv-inner .ptv-row:not(.c-dazn),
+  .ptv-widget #ptv-c-bein:checked   ~ .ptv-inner .ptv-row:not(.c-bein),
+  .ptv-widget #ptv-c-canal:checked  ~ .ptv-inner .ptv-row:not(.c-canal),
+  .ptv-widget #ptv-c-ligue1:checked ~ .ptv-inner .ptv-row:not(.c-ligue1),
+  .ptv-widget #ptv-c-equipe:checked ~ .ptv-inner .ptv-row:not(.c-equipe),
+  .ptv-widget #ptv-c-disney:checked ~ .ptv-inner .ptv-row:not(.c-disney),
+  .ptv-widget #ptv-c-yt:checked     ~ .ptv-inner .ptv-row:not(.c-yt) {
+    display: none !important;
+  }
+
+  /* Mobile */
+  @media (max-width: 540px) {
+    .ptv-widget .ptv-thead,
+    .ptv-widget .ptv-row {
+      grid-template-columns: 55px 1fr 95px;
+      padding: 9px 12px;
+      gap: 8px;
+    }
+    .ptv-widget .ptv-time  { font-size: 13px; }
+    .ptv-widget .ptv-match { font-size: 12.5px; }
+    .ptv-widget .ptv-bdg   { font-size: 9.5px; padding: 2px 6px; }
+    .ptv-widget .ptv-day   { padding: 10px 10px; font-size: 10.5px; }
+    .ptv-widget .ptv-day strong { font-size: 13px; }
+  }
+</style>
+
+<!-- ============ INPUTS RADIO (état CSS) ============ -->
+<input type="radio" name="ptv-day" id="ptv-d1" class="ptv-radio" checked>
+<input type="radio" name="ptv-day" id="ptv-d2" class="ptv-radio">
+<input type="radio" name="ptv-day" id="ptv-d3" class="ptv-radio">
+<input type="radio" name="ptv-day" id="ptv-d4" class="ptv-radio">
+<input type="radio" name="ptv-day" id="ptv-d5" class="ptv-radio">
+<input type="radio" name="ptv-day" id="ptv-d6" class="ptv-radio">
+
+<input type="radio" name="ptv-chan" id="ptv-c-all"    class="ptv-radio" checked>
+<input type="radio" name="ptv-chan" id="ptv-c-dazn"   class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-bein"   class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-canal"  class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-ligue1" class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-equipe" class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-disney" class="ptv-radio">
+<input type="radio" name="ptv-chan" id="ptv-c-yt"     class="ptv-radio">
+
+<div class="ptv-inner">
+
+  <!-- Onglets jours -->
+  <div class="ptv-days">
+    <label class="ptv-day" for="ptv-d1">Ven<strong>1 mai</strong></label>
+    <label class="ptv-day" for="ptv-d2">Sam<strong>2 mai</strong></label>
+    <label class="ptv-day" for="ptv-d3">Dim<strong>3 mai</strong></label>
+    <label class="ptv-day" for="ptv-d4">Lun<strong>4 mai</strong></label>
+    <label class="ptv-day" for="ptv-d5">Mar<strong>5 mai</strong></label>
+    <label class="ptv-day" for="ptv-d6">Mer<strong>6 mai</strong></label>
+  </div>
+
+  <!-- Filtres chaînes -->
+  <div class="ptv-filters">
+    <label class="ptv-filt" for="ptv-c-all">Toutes</label>
+    <label class="ptv-filt" for="ptv-c-dazn">DAZN</label>
+    <label class="ptv-filt" for="ptv-c-bein">beIN Sports</label>
+    <label class="ptv-filt" for="ptv-c-canal">Canal+</label>
+    <label class="ptv-filt" for="ptv-c-ligue1">Ligue 1+</label>
+    <label class="ptv-filt" for="ptv-c-equipe">L'Équipe</label>
+    <label class="ptv-filt" for="ptv-c-disney">Disney+</label>
+    <label class="ptv-filt" for="ptv-c-yt">YouTube</label>
+  </div>
+
+  <!-- En-tête tableau -->
+  <div class="ptv-thead">
+    <div>Heure</div>
+    <div>Match</div>
+    <div>Chaîne</div>
+  </div>
+
+  <!-- ====== VENDREDI 1 MAI ====== -->
+  <div class="ptv-row d-1 c-dazn">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Hambourg F vs Union Berlin F<span>Bundesliga Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-1 c-yt">
+    <div class="ptv-time">17:00</div>
+    <div class="ptv-match">Versailles vs Orléans<span>National</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div>
+  </div>
+  <div class="ptv-row d-1 c-bein">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Gaziantep FK vs Besiktas<span>Süper Lig</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div>
+  </div>
+  <div class="ptv-row d-1 c-yt">
+    <div class="ptv-time">19:30</div>
+    <div class="ptv-match">Aubagne vs Stade Briochin<span>National</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div>
+  </div>
+  <div class="ptv-row d-1 c-dazn">
+    <div class="ptv-time">20:45</div>
+    <div class="ptv-match">Pise vs Lecce<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-1 c-canal">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Leeds vs Burnley<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+  <div class="ptv-row d-1 c-bein">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Gérone vs Majorque<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div>
+  </div>
+
+  <!-- ====== SAMEDI 2 MAI ====== -->
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">13:30</div>
+    <div class="ptv-match">Ipswich vs Queens PR<span>Championship</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 9</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">14:00</div>
+    <div class="ptv-match">Villarreal vs Levante<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div>
+  </div>
+  <div class="ptv-row d-2 c-equipe c-disney">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Lyon F vs Arsenal F<span>Ligue des Champions Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span><span class="ptv-bdg disney">Disney+</span></div>
+  </div>
+  <div class="ptv-row d-2 c-ligue1">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Nantes vs Marseille<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-2 c-dazn">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Udinese vs Torino<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">15:30</div>
+    <div class="ptv-match">Bayern Munich vs Heidenheim<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">15:30</div>
+    <div class="ptv-match">Hoffenheim vs Stuttgart<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">15:30</div>
+    <div class="ptv-match">Francfort vs Hambourg<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">15:30</div>
+    <div class="ptv-match">Union Berlin vs Cologne<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div>
+  </div>
+  <div class="ptv-row d-2 c-canal">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">Multiplex Premier League<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+  <div class="ptv-row d-2 c-canal">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">Newcastle vs Brighton<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div>
+  </div>
+  <div class="ptv-row d-2 c-canal">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">Wolverhampton vs Sunderland<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div>
+  </div>
+  <div class="ptv-row d-2 c-canal">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">Brentford vs West Ham<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 5</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">16:15</div>
+    <div class="ptv-match">Valence vs Atlético Madrid<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">17:00</div>
+    <div class="ptv-match">PSG vs Lorient<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div>
+  </div>
+  <div class="ptv-row d-2 c-dazn">
+    <div class="ptv-time">18:00</div>
+    <div class="ptv-match">Côme vs Naples<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-2 c-canal">
+    <div class="ptv-time">18:30</div>
+    <div class="ptv-match">Arsenal vs Fulham<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">18:30</div>
+    <div class="ptv-match">Bayer Leverkusen vs RB Leipzig<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 9</span></div>
+  </div>
+  <div class="ptv-row d-2 c-ligue1">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Metz vs Monaco<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Famalicao vs Benfica<span>Primeira Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 10</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Fenerbahçe vs Başakşehir<span>Süper Lig</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Samsunspor vs Galatasaray<span>Süper Lig</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Multiplex Ligue 2<span>Ligue 2</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div>
+  </div>
+  <div class="ptv-row d-2 c-dazn">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Ajax vs PSV Eindhoven<span>Eredivisie</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-2 c-dazn c-yt">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Al-Hazem vs Al-Hilal<span>Saudi Pro League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div>
+  </div>
+  <div class="ptv-row d-2 c-dazn">
+    <div class="ptv-time">20:45</div>
+    <div class="ptv-match">Atalanta vs Genoa<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Osasuna vs FC Barcelone<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div>
+  </div>
+  <div class="ptv-row d-2 c-ligue1">
+    <div class="ptv-time">21:05</div>
+    <div class="ptv-match">Nice vs Lens<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-2 c-bein">
+    <div class="ptv-time">21:30</div>
+    <div class="ptv-match">FC Porto vs Alverca<span>Primeira Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 10</span></div>
+  </div>
+
+  <!-- ====== DIMANCHE 3 MAI ====== -->
+  <div class="ptv-row d-3 c-dazn">
+    <div class="ptv-time">12:30</div>
+    <div class="ptv-match">Bologne vs Cagliari<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">13:30</div>
+    <div class="ptv-match">SV Elversberg vs Paderborn<span>Bundesliga 2</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">13:30</div>
+    <div class="ptv-match">Karlsruhe vs Darmstadt<span>Bundesliga 2</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">14:00</div>
+    <div class="ptv-match">Celta Vigo vs Elche<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div>
+  </div>
+  <div class="ptv-row d-3 c-dazn">
+    <div class="ptv-time">14:30</div>
+    <div class="ptv-match">Fortuna Sittard vs Feyenoord<span>Eredivisie</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-3 c-canal">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Bournemouth vs Crystal Palace<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div>
+  </div>
+  <div class="ptv-row d-3 c-ligue1">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Lille vs Le Havre<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-dazn">
+    <div class="ptv-time">15:00</div>
+    <div class="ptv-match">Sassuolo vs AC Milan<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">15:30</div>
+    <div class="ptv-match">St. Pauli vs Mayence<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">16:15</div>
+    <div class="ptv-match">Getafe vs Rayo Vallecano<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div>
+  </div>
+  <div class="ptv-row d-3 c-disney">
+    <div class="ptv-time">16:30</div>
+    <div class="ptv-match">FC Barcelone F vs Bayern F<span>Ligue des Champions Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-canal">
+    <div class="ptv-time">16:30</div>
+    <div class="ptv-match">Manchester United vs Liverpool<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-ligue1">
+    <div class="ptv-time">17:15</div>
+    <div class="ptv-match">Strasbourg vs Toulouse<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-ligue1">
+    <div class="ptv-time">17:15</div>
+    <div class="ptv-match">Auxerre vs Angers<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-ligue1">
+    <div class="ptv-time">17:15</div>
+    <div class="ptv-match">Paris FC vs Brest<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">17:30</div>
+    <div class="ptv-match">Mönchengladbach vs Dortmund<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div>
+  </div>
+  <div class="ptv-row d-3 c-dazn">
+    <div class="ptv-time">18:00</div>
+    <div class="ptv-match">Juventus Turin vs Hellas Verona<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">18:30</div>
+    <div class="ptv-match">Betis Séville vs Oviedo<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">19:00</div>
+    <div class="ptv-match">Braga vs Estoril<span>Primeira Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">19:30</div>
+    <div class="ptv-match">Fribourg vs Wolfsbourg<span>Bundesliga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div>
+  </div>
+  <div class="ptv-row d-3 c-canal">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Aston Villa vs Tottenham<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+  <div class="ptv-row d-3 c-dazn c-yt">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Al-Qadisiyah vs Al-Nassr<span>Saudi Pro League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div>
+  </div>
+  <div class="ptv-row d-3 c-ligue1">
+    <div class="ptv-time">20:45</div>
+    <div class="ptv-match">Lyon vs Rennes<span>Ligue 1</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div>
+  </div>
+  <div class="ptv-row d-3 c-dazn">
+    <div class="ptv-time">20:45</div>
+    <div class="ptv-match">Inter Milan vs Parme<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-3 c-bein">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Espanyol Barcelone vs Real Madrid<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div>
+  </div>
+
+  <!-- ====== LUNDI 4 MAI ====== -->
+  <div class="ptv-row d-4 c-canal">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">Chelsea vs Nottingham Forest<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+  <div class="ptv-row d-4 c-dazn">
+    <div class="ptv-time">18:00</div>
+    <div class="ptv-match">Francfort F vs Nuremberg F<span>Bundesliga Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-4 c-dazn">
+    <div class="ptv-time">18:30</div>
+    <div class="ptv-match">Cremonese vs Lazio Rome<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-4 c-dazn">
+    <div class="ptv-time">20:45</div>
+    <div class="ptv-match">AS Roma vs Fiorentina<span>Serie A</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-4 c-bein">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">FC Séville vs Real Sociedad<span>Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div>
+  </div>
+  <div class="ptv-row d-4 c-canal">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Everton vs Manchester City<span>Premier League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+  <div class="ptv-row d-4 c-bein">
+    <div class="ptv-time">21:15</div>
+    <div class="ptv-match">Sporting CP vs Guimaraes<span>Primeira Liga</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div>
+  </div>
+
+  <!-- ====== MARDI 5 MAI ====== -->
+  <div class="ptv-row d-5 c-equipe">
+    <div class="ptv-time">16:00</div>
+    <div class="ptv-match">France F vs Pologne F U17<span>Euro U17 Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div>
+  </div>
+  <div class="ptv-row d-5 c-dazn c-yt">
+    <div class="ptv-time">20:00</div>
+    <div class="ptv-match">Al Khaleej vs Al-Hilal<span>Saudi Pro League</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div>
+  </div>
+  <div class="ptv-row d-5 c-canal">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Arsenal vs Atlético Madrid<span>Ligue des Champions</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div>
+  </div>
+
+  <!-- ====== MERCREDI 6 MAI ====== -->
+  <div class="ptv-row d-6 c-canal">
+    <div class="ptv-time">17:00</div>
+    <div class="ptv-match">Multiplex D1 Féminine<span>D1 Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div>
+  </div>
+  <div class="ptv-row d-6 c-dazn">
+    <div class="ptv-time">18:45</div>
+    <div class="ptv-match">FC Barcelone F vs Levante F<span>Liga Féminine</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div>
+  </div>
+  <div class="ptv-row d-6 c-canal">
+    <div class="ptv-time">21:00</div>
+    <div class="ptv-match">Bayern Munich vs PSG<span>Ligue des Champions</span></div>
+    <div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div>
+  </div>
+
+  <p class="ptv-foot">Données au 1 mai 2026</p>
+</div>
+</div>
+<!-- /Widget Programme TV Foot -->
