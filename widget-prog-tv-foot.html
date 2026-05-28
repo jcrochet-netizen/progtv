@@ -2,7 +2,7 @@
   Widget Programme TV Foot - HTML/CSS only (zéro JavaScript pour la logique)
   Embed dans un bloc "HTML personnalisé" WordPress (ou via iframe).
   Toute la CSS est scopée dans .ptv-widget pour ne pas polluer le thème.
-  Source des données : footao.tv + matchs.tv (snapshot du 18 mai 2026)
+  Source des données : footao.tv + matchs.tv (snapshot du 28 mai 2026)
 ============================================================= -->
 <div class="ptv-widget">
 <style>
@@ -167,6 +167,7 @@
   .ptv-widget .ptv-bdg.equipe { background: #fff;    color: #000; border-color: #fff; }
   .ptv-widget .ptv-bdg.disney { background: #006fcf; color: #fff; border-color: #006fcf; }
   .ptv-widget .ptv-bdg.yt     { background: #ff0000; color: #fff; border-color: #ff0000; }
+  .ptv-widget .ptv-bdg.m6     { background: #ec1d24; color: #fff; border-color: #ec1d24; }
 
   .ptv-widget .ptv-foot {
     padding: 10px 16px;
@@ -255,12 +256,12 @@
 <div class="ptv-inner">
 
   <div class="ptv-days">
-    <label class="ptv-day" for="ptv-d1">Lun<strong>18 mai</strong></label>
-    <label class="ptv-day" for="ptv-d2">Mar<strong>19 mai</strong></label>
-    <label class="ptv-day" for="ptv-d3">Mer<strong>20 mai</strong></label>
-    <label class="ptv-day" for="ptv-d4">Jeu<strong>21 mai</strong></label>
-    <label class="ptv-day" for="ptv-d5">Ven<strong>22 mai</strong></label>
-    <label class="ptv-day" for="ptv-d6">Sam<strong>23 mai</strong></label>
+    <label class="ptv-day" for="ptv-d1">Jeu<strong>28 mai</strong></label>
+    <label class="ptv-day" for="ptv-d2">Ven<strong>29 mai</strong></label>
+    <label class="ptv-day" for="ptv-d3">Sam<strong>30 mai</strong></label>
+    <label class="ptv-day" for="ptv-d4">Dim<strong>31 mai</strong></label>
+    <label class="ptv-day" for="ptv-d5">Lun<strong>1 juin</strong></label>
+    <label class="ptv-day" for="ptv-d6">Mar<strong>2 juin</strong></label>
   </div>
 
   <div class="ptv-filters">
@@ -280,37 +281,48 @@
     <div>Chaîne</div>
   </div>
 
-  <!-- LUNDI 18 MAI -->
-  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Arsenal vs Burnley<span>Premier League · J37</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <!-- JEUDI 28 MAI -->
+  <div class="ptv-row d-1 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">Belgique vs Espagne U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-1 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Estonie vs Croatie U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">18:00</div><div class="ptv-match">Égypte vs Tanzanie U17<span>CAN U17 · 1/2 finale</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">20:00</div><div class="ptv-match">Fiorentina vs Parme U19<span>D1 U19 Italie · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Irlande vs Qatar<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">21:00</div><div class="ptv-match">Maroc vs Sénégal U17<span>CAN U17 · 1/2 finale</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">21:00</div><div class="ptv-match">Piauiense F vs Santos F<span>Coupe du Brésil Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">22:00</div><div class="ptv-match">Ferroviaria F vs Alagoana F<span>Coupe du Brésil Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">23:30</div><div class="ptv-match">Cruzeiro F vs Doce Mel F<span>Coupe du Brésil Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
 
-  <!-- MARDI 19 MAI -->
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">20:30</div><div class="ptv-match">Bournemouth vs Manchester City<span>Premier League · J37</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">20:30</div><div class="ptv-match">Rouen vs Laval<span>Ligue 2 · Barrage</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:15</div><div class="ptv-match">Chelsea vs Tottenham<span>Premier League · J37</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
+  <!-- VENDREDI 29 MAI -->
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">Monténégro vs Italie U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">France vs Danemark U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">20:00</div><div class="ptv-match">Monza vs Catanzaro<span>Serie B</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-2 c-bein c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Nice vs Saint-Étienne<span>Ligue 1 · Barrage retour</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Lyon F vs Paris FC F<span>D1 Féminine · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
 
-  <!-- MERCREDI 20 MAI -->
-  <div class="ptv-row d-3 c-yt"><div class="ptv-time">07:00</div><div class="ptv-match">Melbourne City F vs Tokyo Verdy F<span>Ligue des Champions Asie F</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-3 c-yt"><div class="ptv-time">12:00</div><div class="ptv-match">Naegohyang F vs Suwon FC F<span>Ligue des Champions Asie F</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-3 c-yt"><div class="ptv-time">14:30</div><div class="ptv-match">Nantes vs Marseille U23<span>Challenge Espoirs · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-yt"><div class="ptv-time">20:00</div><div class="ptv-match">Al Khaleej vs Al-Ahli<span>Saudi Pro League</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Fribourg vs Aston Villa<span>Ligue Europa · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
+  <!-- SAMEDI 30 MAI -->
+  <div class="ptv-row d-3 c-canal"><div class="ptv-time">18:00</div><div class="ptv-match">PSG vs Arsenal<span>Ligue des Champions · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span><span class="ptv-bdg m6">M6</span></div></div>
 
-  <!-- JEUDI 21 MAI -->
-  <div class="ptv-row d-4 c-dazn c-yt"><div class="ptv-time">20:00</div><div class="ptv-match">Al-Nassr vs Damac<span>Saudi Pro League</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-4 c-dazn c-yt"><div class="ptv-time">20:00</div><div class="ptv-match">Al-Fayha vs Al-Hilal<span>Saudi Pro League</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-4 c-bein"><div class="ptv-time">20:45</div><div class="ptv-match">Barrage Relégation Ligue 1<span>Ligue 1 · Barrage</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <!-- DIMANCHE 31 MAI -->
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">12:00</div><div class="ptv-match">Real Sociedad F vs Atlético F<span>Liga Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">12:00</div><div class="ptv-match">Real Madrid F vs Grenade F<span>Liga Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">Espagne vs Croatie U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">Belgique vs Estonie U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">15:00</div><div class="ptv-match">Suisse vs Jordanie<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">16:00</div><div class="ptv-match">Madrid CFF vs FC Barcelone F<span>Liga Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Allemagne vs Finlande<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">21:30</div><div class="ptv-match">États-Unis vs Sénégal<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <!-- VENDREDI 22 MAI -->
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">17:15</div><div class="ptv-match">PSG vs Montpellier U18<span>Coupe Gambardella · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Lens vs Nice<span>Coupe de France · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <!-- LUNDI 1 JUIN -->
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">France vs Monténégro U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">13:30</div><div class="ptv-match">Danemark vs Italie U17<span>Euro U17</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">16:00</div><div class="ptv-match">Norvège vs Suède<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Autriche vs Tunisie<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <!-- SAMEDI 23 MAI -->
-  <div class="ptv-row d-6 c-equipe c-disney"><div class="ptv-time">18:00</div><div class="ptv-match">Lyon F vs FC Barcelone F<span>Ligue des Champions Féminine · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-bein c-equipe"><div class="ptv-time">20:00</div><div class="ptv-match">Bayern Munich vs Stuttgart<span>Coupe d'Allemagne · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Real Madrid vs Athletic Bilbao<span>Liga · J38</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Valence CF vs FC Barcelone<span>Liga · J38</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <!-- MARDI 2 JUIN -->
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Croatie vs Belgique<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Pays de Galles vs Ghana<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <p class="ptv-foot">Données au 18 mai 2026</p>
+  <p class="ptv-foot">Données au 28 mai 2026</p>
 </div>
 </div>
 
