@@ -2,7 +2,7 @@
   Widget Programme TV Foot - HTML/CSS only (zéro JavaScript pour la logique)
   Embed dans un bloc "HTML personnalisé" WordPress (ou via iframe).
   Toute la CSS est scopée dans .ptv-widget pour ne pas polluer le thème.
-  Source des données : footao.tv + matchs.tv (snapshot du 5 juillet 2026 - 1/4 Coupe du Monde)
+  Source des données : footao.tv + matchs.tv (snapshot du 13 juillet 2026 - Demi + Finale Coupe du Monde)
 ============================================================= -->
 <div class="ptv-widget">
 <style>
@@ -256,12 +256,12 @@
 <div class="ptv-inner">
 
   <div class="ptv-days">
-    <label class="ptv-day" for="ptv-d1">Dim<strong>5 juil.</strong></label>
-    <label class="ptv-day" for="ptv-d2">Lun<strong>6 juil.</strong></label>
-    <label class="ptv-day" for="ptv-d3">Mar<strong>7 juil.</strong></label>
-    <label class="ptv-day" for="ptv-d4">Jeu<strong>9 juil.</strong></label>
-    <label class="ptv-day" for="ptv-d5">Ven<strong>10 juil.</strong></label>
-    <label class="ptv-day" for="ptv-d6">Sam<strong>11 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d1">Mar<strong>14 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d2">Mer<strong>15 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d3">Jeu<strong>16 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d4">Ven<strong>17 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d5">Sam<strong>18 juil.</strong></label>
+    <label class="ptv-day" for="ptv-d6">Dim<strong>19 juil.</strong></label>
   </div>
 
   <div class="ptv-filters">
@@ -281,31 +281,27 @@
     <div>Chaîne</div>
   </div>
 
-  <!-- DIMANCHE 5 JUILLET -->
-  <div class="ptv-row d-1 c-equipe"><div class="ptv-time">17:00</div><div class="ptv-match">Ukraine U19 vs Italie U19<span>Euro U19</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
-  <div class="ptv-row d-1 c-equipe"><div class="ptv-time">17:00</div><div class="ptv-match">Serbie U19 vs Croatie U19<span>Euro U19</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">22:00</div><div class="ptv-match">Brésil vs Norvège<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
+  <!-- MARDI 14 JUILLET — Demi France vs Espagne -->
+  <div class="ptv-row d-1 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">France vs Espagne<span>Coupe du Monde 2026 · 1/2 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
 
-  <!-- LUNDI 6 JUILLET -->
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">02:00</div><div class="ptv-match">Mexique vs Angleterre<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Portugal vs Espagne<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
+  <!-- MERCREDI 15 JUILLET -->
+  <div class="ptv-row d-2 c-yt"><div class="ptv-time">18:30</div><div class="ptv-match">Lyon vs Servette Genève<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg yt">OL Play</span></div></div>
+  <div class="ptv-row d-2 c-yt"><div class="ptv-time">18:30</div><div class="ptv-match">RB Salzbourg vs Başakşehir<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Angleterre vs Argentine<span>Coupe du Monde 2026 · 1/2 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
 
-  <!-- MARDI 7 JUILLET -->
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">02:00</div><div class="ptv-match">États-Unis vs Belgique<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">18:00</div><div class="ptv-match">Argentine vs Égypte<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">22:00</div><div class="ptv-match">Suisse vs Colombie<span>Coupe du Monde 2026 · 1/8 finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
+  <!-- JEUDI 16 JUILLET — Repos avant la finale -->
+  <div class="ptv-row d-3"><div class="ptv-time">—</div><div class="ptv-match">Aucun match programmé<span>Journée de repos avant la finale</span></div><div class="ptv-tv"><span class="ptv-bdg">—</span></div></div>
 
-  <!-- JEUDI 9 JUILLET — France 1/4 finale -->
-  <div class="ptv-row d-4 c-bein"><div class="ptv-time">22:00</div><div class="ptv-match">France vs Maroc<span>Coupe du Monde 2026 · 1/4 de finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
+  <!-- VENDREDI 17 JUILLET -->
+  <div class="ptv-row d-4 c-yt"><div class="ptv-time">17:30</div><div class="ptv-match">Rennes vs Guingamp<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
 
-  <!-- VENDREDI 10 JUILLET -->
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">1/4 de finale #2<span>Coupe du Monde 2026 · 1/4 de finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
+  <!-- SAMEDI 18 JUILLET — Match pour la 3e place -->
+  <div class="ptv-row d-5 c-bein"><div class="ptv-time">23:00</div><div class="ptv-match">Match pour la 3e place<span>Coupe du Monde 2026 · Petite finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
 
-  <!-- SAMEDI 11 JUILLET -->
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">23:00</div><div class="ptv-match">1/4 de finale #3<span>Coupe du Monde 2026 · 1/4 de finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">03:00</div><div class="ptv-match">1/4 de finale #4<span>Coupe du Monde 2026 · 1/4 de finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <!-- DIMANCHE 19 JUILLET — FINALE Coupe du Monde 2026 -->
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">🏆 Finale Coupe du Monde 2026<span>Coupe du Monde 2026 · Finale</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span><span class="ptv-bdg m6">M6</span></div></div>
 
-  <p class="ptv-foot">Données au 5 juillet 2026 · Coupe du Monde 2026 · 1/4 finale</p>
+  <p class="ptv-foot">Données au 13 juillet 2026 · Coupe du Monde 2026 · Demi-finales &amp; Finale</p>
 </div>
 </div>
 
