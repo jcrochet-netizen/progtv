@@ -2,7 +2,7 @@
   Widget Programme TV Foot - HTML/CSS only (zéro JavaScript pour la logique)
   Embed dans un bloc "HTML personnalisé" WordPress (ou via iframe).
   Toute la CSS est scopée dans .ptv-widget pour ne pas polluer le thème.
-  Source des données : footao.tv + matchs.tv (snapshot du 18 septembre 2026 - J5 championnats + Ligue des Champions Féminine J1)
+  Source des données : footao.tv + matchs.tv (snapshot du 23 septembre 2026 - Ligue des Nations + CAN 2027 + UWCL J1)
 ============================================================= -->
 <div class="ptv-widget">
 <style>
@@ -256,12 +256,12 @@
 <div class="ptv-inner">
 
   <div class="ptv-days">
-    <label class="ptv-day" for="ptv-d1">Ven<strong>18 sept.</strong></label>
-    <label class="ptv-day" for="ptv-d2">Sam<strong>19 sept.</strong></label>
-    <label class="ptv-day" for="ptv-d3">Dim<strong>20 sept.</strong></label>
-    <label class="ptv-day" for="ptv-d4">Lun<strong>21 sept.</strong></label>
-    <label class="ptv-day" for="ptv-d5">Mar<strong>22 sept.</strong></label>
-    <label class="ptv-day" for="ptv-d6">Mer<strong>23 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d1">Mer<strong>23 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d2">Jeu<strong>24 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d3">Ven<strong>25 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d4">Sam<strong>26 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d5">Dim<strong>27 sept.</strong></label>
+    <label class="ptv-day" for="ptv-d6">Lun<strong>28 sept.</strong></label>
   </div>
 
   <div class="ptv-filters">
@@ -281,102 +281,76 @@
     <div>Chaîne</div>
   </div>
 
-  <!-- VENDREDI 18 SEPTEMBRE — Monaco-Lens L1 J5 -->
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Multiplex Ligue 2 J7<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Reims vs Montpellier<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Laval vs Sochaux<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Pau FC vs Dunkerque<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Annecy vs Dijon<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Rodez vs Nancy<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Grenoble vs Clermont Foot<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 9</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:30</div><div class="ptv-match">Bayern Munich vs Union Berlin<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-1 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Monaco vs Lens<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-1 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Monza vs Sassuolo<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-1 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Espanyol Barcelone vs Elche<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Brentford vs Chelsea<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">PSG F vs Nantes F<span>D1 Féminine · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
+  <!-- MERCREDI 23 SEPTEMBRE — UWCL J1 -->
+  <div class="ptv-row d-1 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">OH Louvain F vs AS Roma F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-1 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">Servette Chênois F vs Lyon F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-1 c-yt"><div class="ptv-time">19:00</div><div class="ptv-match">France U18 vs Autriche U18<span>Match amical</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-1 c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Chelsea F vs Austria Vienne F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-1 c-disney c-equipe"><div class="ptv-time">21:00</div><div class="ptv-match">FC Barcelone F vs Paris FC F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <!-- SAMEDI 19 SEPTEMBRE — Marathon L1 J5 + PL J5 + Bundesliga J4 + Serie A J5 -->
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">13:30</div><div class="ptv-match">Tottenham vs Aston Villa<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Boulogne vs Nantes<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Guingamp vs Red Star<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 3</span></div></div>
-  <div class="ptv-row d-2 c-dazn c-disney"><div class="ptv-time">14:00</div><div class="ptv-match">Osasuna vs Rayo Vallecano<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">14:45</div><div class="ptv-match">Multiplex Ligue 3 J7<span>Ligue 3 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Bologne vs Torino<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Udinese vs Cagliari<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Mamelodi Sundowns vs Al-Ahli<span>Coupe intercontinentale FIFA</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Multiplex Bundesliga J4<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Francfort vs Fribourg<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Mönchengladbach vs Mayence<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Hambourg vs Cologne<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Werder Brême vs Augsbourg<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Multiplex Premier League J5<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Brighton vs Arsenal<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Newcastle vs Hull City<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Everton vs Ipswich<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 8</span></div></div>
-  <div class="ptv-row d-2 c-dazn c-disney"><div class="ptv-time">16:15</div><div class="ptv-match">Athletic Bilbao vs Alavés<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Paris FC vs Strasbourg<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">18:00</div><div class="ptv-match">AS Roma vs Inter Milan<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Celta Vigo vs Racing Santander<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">18:30</div><div class="ptv-match">Stuttgart vs Borussia Dortmund<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:30</div><div class="ptv-match">Nottingham Forest vs Coventry<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">19:00</div><div class="ptv-match">Trabzonspor vs Galatasaray<span>Süper Lig</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Metz vs Saint-Étienne<span>Ligue 2 · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">20:00</div><div class="ptv-match">Ajax Amsterdam vs Excelsior<span>Eredivisie</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Lyon vs Rennes<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Toulouse vs Le Havre<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Angers vs Troyes<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Le Mans vs Lorient<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-2 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Venise vs Lazio Rome<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-2 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">FC Séville vs FC Barcelone<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:30</div><div class="ptv-match">Sporting CP vs Arouca<span>Primeira Liga</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <!-- JEUDI 24 SEPTEMBRE — UEFA Nations League + CAN 2027 -->
+  <div class="ptv-row d-2 c-bein"><div class="ptv-time">18:00</div><div class="ptv-match">RD Congo vs Guinée Équatoriale<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
+  <div class="ptv-row d-2 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Caen vs Rouen<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Pays-Bas vs Allemagne<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Portugal vs Pays de Galles<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Norvège vs Danemark<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Serbie vs Grèce<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Autriche vs Israël<span>Ligue des Nations · Ligue B</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Kosovo vs Irlande<span>Ligue des Nations · Ligue B</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Côte d'Ivoire vs Ghana<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Cameroun vs Comores<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
+  <div class="ptv-row d-2 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Tunisie vs Ouganda<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
 
-  <!-- DIMANCHE 20 SEPTEMBRE — Marseille-PSG + Derby Madrid -->
-  <div class="ptv-row d-3"><div class="ptv-time">01:30</div><div class="ptv-match">New England Revolution vs Orlando City<span>MLS · J25</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
-  <div class="ptv-row d-3"><div class="ptv-time">01:30</div><div class="ptv-match">CF Montréal vs Columbus Crew<span>MLS · J25</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">12:15</div><div class="ptv-match">Feyenoord vs Utrecht<span>Eredivisie</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">12:30</div><div class="ptv-match">Fiorentina vs Naples<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">13:00</div><div class="ptv-match">Wolverhampton vs West Bromwich<span>Championship</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">14:00</div><div class="ptv-match">Getafe vs Malaga<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">14:30</div><div class="ptv-match">Twente vs PSV Eindhoven<span>Eredivisie</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-ligue1"><div class="ptv-time">15:00</div><div class="ptv-match">Auxerre vs Brest<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Parme vs Genoa<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Frosinone vs Côme<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Manchester City vs Sunderland<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Bournemouth vs Liverpool<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Leeds vs Crystal Palace<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Bayer Leverkusen vs RB Leipzig<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">16:00</div><div class="ptv-match">Fenerbahçe vs Eyüpspor<span>Süper Lig</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">16:15</div><div class="ptv-match">Atlético Madrid vs Real Madrid<span>Liga · J6 · Derby madrilène</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Nice vs Lille<span>Ligue 1 · J5</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">17:30</div><div class="ptv-match">Fulham vs Manchester United<span>Premier League · J5</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">17:30</div><div class="ptv-match">Schalke 04 vs SV Elversberg<span>Bundesliga · J4</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">18:00</div><div class="ptv-match">Juventus vs Atalanta<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Villarreal vs Levante<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Deportivo La Corogne vs Bétis Séville<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">18:30</div><div class="ptv-match">Club Bruges vs Racing Genk<span>Jupiler Pro League</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Marseille vs PSG<span>Ligue 1 · J5 · Le Classique</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">AC Milan vs Lecce<span>Serie A · J5</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Valence vs Real Sociedad<span>Liga · J6</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:30</div><div class="ptv-match">FC Porto vs Benfica<span>Primeira Liga · Clásico</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <!-- VENDREDI 25 SEPTEMBRE — Turquie-France sur TF1 -->
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Arménie vs Lettonie<span>Ligue des Nations</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Géorgie vs Irlande du Nord<span>Ligue des Nations</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">18:00</div><div class="ptv-match">Nigéria vs Madagascar<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
+  <div class="ptv-row d-3"><div class="ptv-time">20:45</div><div class="ptv-match">Turquie vs France<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg m6">TF1</span></div></div>
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Italie vs Belgique<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Hongrie vs Ukraine<span>Ligue des Nations</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Pologne vs Bosnie<span>Ligue des Nations</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Suède vs Roumanie<span>Ligue des Nations</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Maroc vs Gabon<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Algérie vs Zambie<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Sénégal vs Mozambique<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Mali vs Cap Vert<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">21:00</div><div class="ptv-match">Égypte vs Angola<span>Qualifications CAN 2027</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
 
-  <!-- LUNDI 21 SEPTEMBRE — Journée calme -->
-  <div class="ptv-row d-4"><div class="ptv-time">01:00</div><div class="ptv-match">Inter Miami vs San Diego FC<span>MLS · J25</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
+  <!-- SAMEDI 26 SEPTEMBRE — Nations League + Multiplex L3 -->
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">15:00</div><div class="ptv-match">Slovénie vs Écosse<span>Ligue des Nations · Ligue B</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Islande vs Estonie<span>Ligue des Nations · Ligue C</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Bulgarie vs Luxembourg<span>Ligue des Nations · Ligue C</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Multiplex Ligue 3 J8<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Villefranche vs Versailles<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Fleury 91 vs Aubagne<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Paris 13 Atletico vs Bastia<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Valenciennes vs Le Puy<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Orléans vs Cannes<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Quevilly vs Amiens<span>Ligue 3 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Angleterre vs Espagne<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Tchèquie vs Croatie<span>Ligue des Nations · Ligue A</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-4 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Macédoine du Nord vs Suisse<span>Ligue des Nations · Ligue B</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <!-- MARDI 22 SEPTEMBRE — Ligue des Champions Féminine J1 -->
-  <div class="ptv-row d-5 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">Bayern Munich F vs Manchester City F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-5 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">Inter Milan F vs BK Häcken F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-5 c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Arsenal F vs Køge F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-5 c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Juventus F vs SL Benfica F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-5 c-disney c-equipe"><div class="ptv-time">21:00</div><div class="ptv-match">Real Madrid F vs PSG F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <!-- DIMANCHE 27 SEPTEMBRE — Nations League 2e journée + MLS J27 -->
+  <div class="ptv-row d-5"><div class="ptv-time">01:30</div><div class="ptv-match">Philadelphia Union vs Orlando City<span>MLS · J27</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
+  <div class="ptv-row d-5"><div class="ptv-time">01:30</div><div class="ptv-match">Atlanta United vs NYC FC<span>MLS · J27</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
+  <div class="ptv-row d-5"><div class="ptv-time">02:30</div><div class="ptv-match">FC Dallas vs LAFC<span>MLS · J27</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
+  <div class="ptv-row d-5"><div class="ptv-time">04:30</div><div class="ptv-match">LA Galaxy vs Colorado Rapids<span>MLS · J27</span></div><div class="ptv-tv"><span class="ptv-bdg">Apple TV</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Autriche vs Kosovo<span>Ligue des Nations · Ligue B · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Danemark vs Pays de Galles<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Serbie vs Pays-Bas<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Norvège vs Portugal<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Allemagne vs Grèce<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-5 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Israël vs Irlande<span>Ligue des Nations · Ligue B · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <!-- MERCREDI 23 SEPTEMBRE — Ligue des Champions Féminine J1 -->
-  <div class="ptv-row d-6 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">OH Louvain F vs AS Roma F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-disney"><div class="ptv-time">18:45</div><div class="ptv-match">Servette Chênois F vs Lyon F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Chelsea F vs Austria Vienne F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">FC Barcelone F vs Paris FC F<span>Ligue des Champions Féminine · J1</span></div><div class="ptv-tv"><span class="ptv-bdg disney">Disney+</span></div></div>
+  <!-- LUNDI 28 SEPTEMBRE — Nations League fin de trêve -->
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">18:00</div><div class="ptv-match">Bosnie vs Hongrie<span>Ligue des Nations · Ligue B · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">France vs Turquie (retour)<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Belgique vs Italie (retour)<span>Ligue des Nations · Ligue A · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Ukraine vs Pologne<span>Ligue des Nations · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
+  <div class="ptv-row d-6 c-equipe"><div class="ptv-time">20:45</div><div class="ptv-match">Roumanie vs Suède<span>Ligue des Nations · J2</span></div><div class="ptv-tv"><span class="ptv-bdg equipe">L'Équipe</span></div></div>
 
-  <p class="ptv-foot">Données au 18 septembre 2026 · J5 championnats &amp; Ligue des Champions Féminine J1</p>
+  <p class="ptv-foot">Données au 23 septembre 2026 · Trêve internationale · Nations League &amp; CAN 2027</p>
 </div>
 </div>
 
