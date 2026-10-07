@@ -6,6 +6,8 @@
 ============================================================= -->
 <div class="ptv-widget">
 <style>
+  html, body { margin: 0; padding: 0; }
+
   .ptv-widget,
   .ptv-widget *,
   .ptv-widget *::before,
@@ -26,7 +28,7 @@
     border-radius: 14px;
     overflow: hidden;
     max-width: 880px;
-    margin: 16px auto;
+    margin: 0 auto;
     font-size: 14px;
     line-height: 1.45;
     box-shadow: 0 6px 28px rgba(0,0,0,.18);
@@ -377,26 +379,53 @@
 </div>
 </div>
 
-<!-- Mini-script (15 lignes) : envoie la hauteur du contenu au parent
-     pour que l'iframe s'auto-ajuste. Aucun impact sur les onglets/filtres
-     qui restent en CSS pur. -->
+<!-- Script d'auto-resize iframe : mesure précise + polling de secours. -->
 <script>
 (function(){
+  var lastH = 0;
+  function measure(){
+    var el = document.querySelector('.ptv-widget');
+    if (el) return Math.ceil(el.getBoundingClientRect().height);
+    return Math.ceil(document.documentElement.scrollHeight);
+  }
   function sendHeight(){
     try {
-      var h = document.documentElement.scrollHeight || document.body.scrollHeight;
-      if (parent !== window) parent.postMessage({type:'ptv-height', height:h}, '*');
+      var h = measure();
+      if (h !== lastH && parent !== window) {
+        lastH = h;
+        parent.postMessage({type:'ptv-height', height:h}, '*');
+      }
     } catch(e){}
   }
-  window.addEventListener('load', sendHeight);
+  function doubleRafSend(){
+    requestAnimationFrame(function(){ requestAnimationFrame(sendHeight); });
+  }
+  window.addEventListener('load', function(){
+    sendHeight();
+    setTimeout(sendHeight, 100);
+    setTimeout(sendHeight, 400);
+  });
   document.addEventListener('change', function(e){
     if (e.target && e.target.classList && e.target.classList.contains('ptv-radio')) {
-      setTimeout(sendHeight, 30);
+      doubleRafSend();
+      setTimeout(sendHeight, 100);
     }
   });
-  if (window.ResizeObserver) { new ResizeObserver(sendHeight).observe(document.documentElement); }
+  if (window.ResizeObserver) {
+    var ro = new ResizeObserver(sendHeight);
+    ro.observe(document.documentElement);
+    document.addEventListener('DOMContentLoaded', function(){
+      var el = document.querySelector('.ptv-widget');
+      if (el) ro.observe(el);
+    });
+  }
   window.addEventListener('resize', sendHeight);
-  setTimeout(sendHeight, 100);
+  // Polling de secours : premières 5 secondes (couvre les fonts, images, lazy CSS)
+  var ticks = 0;
+  var poll = setInterval(function(){
+    sendHeight();
+    if (++ticks >= 10) clearInterval(poll);
+  }, 500);
 })();
 </script>
 <!-- /Widget Programme TV Foot -->
