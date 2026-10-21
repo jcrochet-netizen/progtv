@@ -2,7 +2,7 @@
   Widget Programme TV Foot - HTML/CSS only (zéro JavaScript pour la logique)
   Embed dans un bloc "HTML personnalisé" WordPress (ou via iframe).
   Toute la CSS est scopée dans .ptv-widget pour ne pas polluer le thème.
-  Source des données : footao.tv + matchs.tv (snapshot du 19 octobre 2026 - Ligue des Champions J3 : PSG-Barça)
+  Source des données : footao.tv + matchs.tv (snapshot du 21 octobre 2026 - Ligue des Champions J3 + Clasico Barça-Real Madrid)
 ============================================================= -->
 <div class="ptv-widget">
 <style>
@@ -258,12 +258,12 @@
 <div class="ptv-inner">
 
   <div class="ptv-days">
-    <label class="ptv-day" for="ptv-d1">Lun<strong>19 oct.</strong></label>
-    <label class="ptv-day" for="ptv-d2">Mar<strong>20 oct.</strong></label>
-    <label class="ptv-day" for="ptv-d3">Mer<strong>21 oct.</strong></label>
-    <label class="ptv-day" for="ptv-d4">Jeu<strong>22 oct.</strong></label>
-    <label class="ptv-day" for="ptv-d5">Ven<strong>23 oct.</strong></label>
-    <label class="ptv-day" for="ptv-d6">Sam<strong>24 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d1">Mer<strong>21 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d2">Jeu<strong>22 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d3">Ven<strong>23 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d4">Sam<strong>24 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d5">Dim<strong>25 oct.</strong></label>
+    <label class="ptv-day" for="ptv-d6">Lun<strong>26 oct.</strong></label>
   </div>
 
   <div class="ptv-filters">
@@ -283,101 +283,120 @@
     <div>Chaîne</div>
   </div>
 
-  <!-- LUNDI 19 OCTOBRE -->
-  <div class="ptv-row d-1 c-dazn"><div class="ptv-time">18:30</div><div class="ptv-match">Monza vs Cagliari<span>Serie A · J7</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">19:00</div><div class="ptv-match">Trabzonspor vs Beşiktaş<span>Süper Lig · J8</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-1 c-dazn"><div class="ptv-time">20:00</div><div class="ptv-match">Al-Hilal vs Al-Hazem<span>Saudi Pro League · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">20:45</div><div class="ptv-match">Rodez vs Montpellier<span>Ligue 2 · J9</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-1 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Parme vs Torino<span>Serie A · J7</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Tottenham vs Coventry<span>Premier League · J7</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-1 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Getafe vs Rayo Vallecano<span>Liga · J9</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-1 c-bein"><div class="ptv-time">21:15</div><div class="ptv-match">Braga vs Gil Vicente<span>Primeira Liga</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-
-  <!-- MARDI 20 OCTOBRE — 🏆 Ligue des Champions J3 : PSG-Barça -->
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Sabah vs Borussia Dortmund<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Fenerbahçe vs Slavia Prague<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
-  <div class="ptv-row d-2 c-dazn c-yt"><div class="ptv-time">20:00</div><div class="ptv-match">Al-Nassr vs NEOM<span>Saudi Pro League · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">PSG vs FC Barcelone<span>Ligue des Champions · J3 · LE CHOC</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Liverpool vs Villarreal<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Manchester City vs AEK Athènes<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">AS Roma vs Slovan Bratislava<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Naples vs Bodø/Glimt<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 5</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Stuttgart vs Atlético Madrid<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">FC Porto vs PSV Eindhoven<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
-  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Multiplex Ligue des Champions<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
-
   <!-- MERCREDI 21 OCTOBRE — 🏆 Ligue des Champions J3 : Lille, Lens -->
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Lille vs Galatasaray<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Côme vs Manchester United<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
-  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">20:00</div><div class="ptv-match">Levante vs Athletic Bilbao<span>Liga · J6 (reporté)</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Club Bruges vs Lens<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bayern Munich vs Arsenal<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Real Madrid vs RB Leipzig<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Inter Milan vs Shakhtar Donetsk<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Aston Villa vs Viking<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 5</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bétis Séville vs Feyenoord<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Sporting CP vs LASK Linz<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
-  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Multiplex Ligue des Champions<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Lille vs Galatasaray<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Côme vs Manchester United<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
+  <div class="ptv-row d-1 c-dazn c-disney"><div class="ptv-time">20:00</div><div class="ptv-match">Levante vs Athletic Bilbao<span>Liga · J6 (reporté)</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Club Bruges vs Lens<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bayern Munich vs Arsenal<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Real Madrid vs RB Leipzig<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Inter Milan vs Shakhtar Donetsk<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Aston Villa vs Viking<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 5</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bétis Séville vs Feyenoord<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Sporting CP vs LASK Linz<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
+  <div class="ptv-row d-1 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Multiplex Ligue des Champions<span>Ligue des Champions · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
 
   <!-- JEUDI 22 OCTOBRE — Ligue Europa J3 + Conference J2 -->
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Sturm Graz vs Marseille<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Juventus vs Rennes<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">OFI Crète vs Leverkusen<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Lech vs Sunderland<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Dinamo Zagreb vs Nimègue<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 8</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Multiplex Ligue Europa<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Hoffenheim vs Lyon<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Monaco vs Fribourg<span>Ligue Europa Conférence · J2</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bournemouth vs AC Milan<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 2</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Beşiktaş vs Crystal Palace<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Celtic Glasgow vs Celta Vigo<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Omonia vs Benfica<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Ajax vs Atalanta<span>Ligue Europa Conférence · J2</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 12</span></div></div>
-  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Multiplex Ligue Europa / Conference<span>Ligue Europa / Conference</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Sturm Graz vs Marseille<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Juventus vs Rennes<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Sport</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">OFI Crète vs Bayer Leverkusen<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Lech Poznan vs Sunderland<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Dinamo Zagreb vs NEC Nimègue<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 8</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Union Saint-Gilloise vs Hapoel Beer Sheva<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">18:45</div><div class="ptv-match">Multiplex Ligue Europa<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Hoffenheim vs Lyon<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Monaco vs Fribourg<span>Ligue Europa Conférence · J2</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Bournemouth vs AC Milan<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 2</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Beşiktaş vs Crystal Palace<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Celtic Glasgow vs Celta Vigo<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 6</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Omonia vs Benfica<span>Ligue Europa · J3</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 8</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Ajax vs Atalanta<span>Ligue Europa Conférence · J2</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 10</span></div></div>
+  <div class="ptv-row d-2 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Multiplex Ligue Europa / Conference<span>Ligue Europa / Conference</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ S360</span></div></div>
 
   <!-- VENDREDI 23 OCTOBRE -->
-  <div class="ptv-row d-5 c-dazn c-yt"><div class="ptv-time">15:30</div><div class="ptv-match">Al-Faisaly vs Al-Nassr<span>Saudi Pro League · J11</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Multiplex Ligue 2 J10<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Sochaux vs Annecy<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Dunkerque vs Metz<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Clermont vs Guingamp<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Nancy vs Laval<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Pau FC vs Grenoble<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
-  <div class="ptv-row d-5 c-bein"><div class="ptv-time">20:30</div><div class="ptv-match">Stuttgart vs Mönchengladbach<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 10</span></div></div>
-  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Brest vs Nice<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Torino vs Monza<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-5 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Ipswich vs Nottingham Forest<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 2</span></div></div>
-  <div class="ptv-row d-5 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Alavés vs Malaga<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-5 c-canal"><div class="ptv-time">21:05</div><div class="ptv-match">PSG F vs Montpellier F<span>D1 Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-3 c-dazn c-yt"><div class="ptv-time">15:30</div><div class="ptv-match">Al-Faisaly vs Al-Nassr<span>Saudi Pro League · J11</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg yt">YouTube</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Multiplex Ligue 2 J10<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Sochaux vs Annecy<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Dunkerque vs Metz<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Clermont vs Guingamp<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Nancy vs Laval<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Pau FC vs Grenoble<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
+  <div class="ptv-row d-3 c-bein"><div class="ptv-time">20:30</div><div class="ptv-match">Stuttgart vs Mönchengladbach<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 10</span></div></div>
+  <div class="ptv-row d-3 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Brest vs Nice<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-3 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Torino vs Monza<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-3 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Ipswich vs Nottingham Forest<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 7</span></div></div>
+  <div class="ptv-row d-3 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Alavés vs Malaga<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-3 c-yt"><div class="ptv-time">21:05</div><div class="ptv-match">PSG F vs Montpellier F<span>D1 Féminine · J6</span></div><div class="ptv-tv"><span class="ptv-bdg yt">YouTube</span></div></div>
 
   <!-- SAMEDI 24 OCTOBRE — Marathon L1 J8 + PL J8 + Bundesliga J7 + Serie A J8 + Liga J10 -->
-  <div class="ptv-row d-6 c-canal"><div class="ptv-time">13:30</div><div class="ptv-match">Aston Villa vs Manchester City<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Montpellier vs Red Star<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Dijon vs Rodez<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 3</span></div></div>
-  <div class="ptv-row d-6 c-dazn c-disney"><div class="ptv-time">14:00</div><div class="ptv-match">Rayo Vallecano vs Elche<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Côme vs Sassuolo<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-6 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Cagliari vs Bologne<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Multiplex Bundesliga J7<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">RB Leipzig vs SV Elversberg<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Augsbourg vs Union Berlin<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Mayence vs Werder Brême<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Cologne vs Schalke 04<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Paderborn vs Hambourg<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 9</span></div></div>
-  <div class="ptv-row d-6 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Arsenal vs Everton<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-6 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Coventry vs Fulham<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
-  <div class="ptv-row d-6 c-dazn c-disney"><div class="ptv-time">16:15</div><div class="ptv-match">Racing Santander vs Espanyol Barcelone<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Toulouse vs Troyes<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-6 c-dazn"><div class="ptv-time">18:00</div><div class="ptv-match">Naples vs AS Roma<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-6 c-canal"><div class="ptv-time">18:30</div><div class="ptv-match">Chelsea vs Tottenham<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">18:30</div><div class="ptv-match">Borussia Dortmund vs Francfort<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
-  <div class="ptv-row d-6 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Valence vs Villarreal<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Saint-Étienne vs Nantes<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
-  <div class="ptv-row d-6 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Lens vs Paris FC<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
-  <div class="ptv-row d-6 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Lazio Rome vs Parme<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
-  <div class="ptv-row d-6 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Atlético Madrid vs Deportivo La Corogne<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
-  <div class="ptv-row d-6 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Lyon F vs Marseille F<span>D1 Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-4 c-canal"><div class="ptv-time">13:30</div><div class="ptv-match">Aston Villa vs Manchester City<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Montpellier vs Red Star<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">14:00</div><div class="ptv-match">Dijon vs Rodez<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 3</span></div></div>
+  <div class="ptv-row d-4 c-dazn c-disney"><div class="ptv-time">14:00</div><div class="ptv-match">Rayo Vallecano vs Elche<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Côme vs Sassuolo<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Cagliari vs Bologne<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Multiplex Bundesliga J7<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">RB Leipzig vs SV Elversberg<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Augsbourg vs Union Berlin<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Mayence vs Werder Brême<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Cologne vs Schalke 04<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Paderborn vs Hambourg<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 9</span></div></div>
+  <div class="ptv-row d-4 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Arsenal vs Everton<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-4 c-canal"><div class="ptv-time">16:00</div><div class="ptv-match">Coventry vs Fulham<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
+  <div class="ptv-row d-4 c-dazn c-disney"><div class="ptv-time">16:15</div><div class="ptv-match">Racing Santander vs Espanyol Barcelone<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Toulouse vs Troyes<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">18:00</div><div class="ptv-match">Naples vs AS Roma<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-canal"><div class="ptv-time">18:30</div><div class="ptv-match">Chelsea vs Tottenham<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">18:30</div><div class="ptv-match">Borussia Dortmund vs Francfort<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-4 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Valence vs Villarreal<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Saint-Étienne vs Nantes<span>Ligue 2 · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <div class="ptv-row d-4 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">Lens vs Paris FC<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-4 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Lazio Rome vs Parme<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-4 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Atlético Madrid vs Deportivo La Corogne<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-4 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Lyon F vs Marseille F<span>D1 Féminine</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-4 c-bein"><div class="ptv-time">21:30</div><div class="ptv-match">Gil Vicente vs FC Porto<span>Primeira Liga · J9</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
 
-  <p class="ptv-foot">Données au 19 octobre 2026 · Ligue des Champions J3 (PSG-Barça) &amp; Ligue Europa J3</p>
+  <!-- DIMANCHE 25 OCTOBRE — 🔥 CLASICO Barça-Real Madrid + PSG-Lyon -->
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">12:30</div><div class="ptv-match">Inter Milan vs Fiorentina<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-dazn c-disney"><div class="ptv-time">14:00</div><div class="ptv-match">Athletic Bilbao vs Getafe<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">14:30</div><div class="ptv-match">PSV Eindhoven vs Feyenoord<span>Eredivisie · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">15:00</div><div class="ptv-match">Monaco vs Lille<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Manchester United vs Bournemouth<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Foot</span></div></div>
+  <div class="ptv-row d-5 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Liverpool vs Brighton<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 1</span></div></div>
+  <div class="ptv-row d-5 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Crystal Palace vs Newcastle<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 3</span></div></div>
+  <div class="ptv-row d-5 c-canal"><div class="ptv-time">15:00</div><div class="ptv-match">Hull City vs Brentford<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 4</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Atalanta vs Frosinone<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">15:00</div><div class="ptv-match">Genoa vs Venise<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-bein"><div class="ptv-time">15:30</div><div class="ptv-match">Hoffenheim vs Bayer Leverkusen<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
+  <div class="ptv-row d-5 c-dazn c-disney"><div class="ptv-time">16:15</div><div class="ptv-match">Celta Vigo vs Bétis Séville<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">16:45</div><div class="ptv-match">Sparta Rotterdam vs Ajax Amsterdam<span>Eredivisie · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Angers vs Lorient<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Marseille vs Le Havre<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Rennes vs Strasbourg<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">17:15</div><div class="ptv-match">Auxerre vs Le Mans<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-canal"><div class="ptv-time">17:30</div><div class="ptv-match">Sunderland vs Leeds<span>Premier League · J8</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+</span></div></div>
+  <div class="ptv-row d-5 c-bein"><div class="ptv-time">17:30</div><div class="ptv-match">Fribourg vs Bayern Munich<span>Bundesliga · J7</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">18:00</div><div class="ptv-match">Lecce vs Juventus<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-dazn c-disney"><div class="ptv-time">18:30</div><div class="ptv-match">Real Sociedad vs Levante<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-5 c-ligue1"><div class="ptv-time">20:45</div><div class="ptv-match">PSG vs Lyon<span>Ligue 1 · J8</span></div><div class="ptv-tv"><span class="ptv-bdg ligue1">Ligue 1+</span></div></div>
+  <div class="ptv-row d-5 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Udinese vs AC Milan<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+  <div class="ptv-row d-5 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">FC Barcelone vs Real Madrid<span>Liga · J10 · CLASICO</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-5 c-bein"><div class="ptv-time">21:30</div><div class="ptv-match">Sporting CP vs Academico Viseu<span>Primeira Liga · J9</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+
+  <!-- LUNDI 26 OCTOBRE — Multiplex L2 J11 + Séville-Osasuna Liga + Galatasaray-Fenerbahçe -->
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">19:30</div><div class="ptv-match">Galatasaray vs Fenerbahçe<span>Süper Lig · J10</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 1</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Multiplex Ligue 2 J11<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 2</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Boulogne vs Reims<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 4</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Sochaux vs Annecy<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 5</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Dunkerque vs Metz<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 6</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Clermont vs Guingamp<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 7</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:00</div><div class="ptv-match">Pau FC vs Grenoble<span>Ligue 2 · J11</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 8</span></div></div>
+  <div class="ptv-row d-6 c-bein"><div class="ptv-time">20:30</div><div class="ptv-match">Mönchengladbach vs St. Pauli<span>Bundesliga · J8</span></div><div class="ptv-tv"><span class="ptv-bdg bein">beIN 10</span></div></div>
+  <div class="ptv-row d-6 c-canal"><div class="ptv-time">21:00</div><div class="ptv-match">Leeds vs West Ham<span>Premier League · J9</span></div><div class="ptv-tv"><span class="ptv-bdg canal">Canal+ Live 2</span></div></div>
+  <div class="ptv-row d-6 c-dazn c-disney"><div class="ptv-time">21:00</div><div class="ptv-match">Séville vs Osasuna<span>Liga · J10</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span><span class="ptv-bdg disney">Disney+</span></div></div>
+  <div class="ptv-row d-6 c-dazn"><div class="ptv-time">20:45</div><div class="ptv-match">Vérone vs Cagliari<span>Serie A · J8</span></div><div class="ptv-tv"><span class="ptv-bdg dazn">DAZN</span></div></div>
+
+  <p class="ptv-foot">Données au 21 octobre 2026 · Ligue des Champions J3, Ligue Europa J3 &amp; Clasico Barça–Real Madrid (dim.)</p>
 </div>
 </div>
 
